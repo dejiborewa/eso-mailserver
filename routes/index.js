@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
                         <p> Email: ${email || "Not specified"} </p>
                         <p> Address: ${address || "Not specified"} </p>
                         <p> Contact Number: ${contactNumber || "Not specified"} </p>
-                        <p> Contact Person: ${contactPerso || "Not specified"} </p>
+                        <p> Contact Person: ${contactPerson || "Not specified"} </p>
                         <p> Country of Organization: ${countriesOfOrganization || "Not specified"} </p>
                         <p> Headquaters: ${countryOfHeadquarter || "Not specified"} </p>
                         <p> Type of Organization: ${organizationType || "Not specified"} </p>
