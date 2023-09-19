@@ -11,17 +11,15 @@ async function sendMail(from, html) {
     },
   });
 
-  // setup email data with unicode symbols
+
   let mailOptions = {
     from: from,
-    // to: "iogunfuwa@impactinvestorsfoundation.org, mglover@impactinvestorsfoundation.org",
-    to: "ayodejiakinborewa.com",
+    to: "ayodejiakinborewa@gmail.com",
     subject: "NABII Membership Notification",
     html: html
   };
 
   try {
-    // send mail with defined transport object
     const info = await transporter.sendMail(mailOptions)
     console.log("Message sent: %s", info.messageId);
     return info
@@ -31,4 +29,4 @@ async function sendMail(from, html) {
   }
 }
 
-export default sendMail 
+export default sendMail
