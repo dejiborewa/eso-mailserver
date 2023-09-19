@@ -23,14 +23,14 @@ router.post("/", async (req, res) => {
                         </head>
                         <body>
                         <h3 class="con">New Registration</h3>
-                        <p> Name: ${nameOfOrganization} </p>
-                        <p> Email: ${email} </p>
-                        <p> Address: ${address} </p>
-                        <p> Contact Number: ${contactNumber} </p>
-                        <p> Contact Person: ${contactPerson} </p>
-                        <p> Country of Organization: ${countriesOfOrganization} </p>
-                        <p> Headquaters: ${countryOfHeadquarter} </p>
-                        <p> Type of Organization: ${organizationType} </p>
+                        <p> Name: ${nameOfOrganization || "Not specified"} </p>
+                        <p> Email: ${email || "Not specified"} </p>
+                        <p> Address: ${address || "Not specified"} </p>
+                        <p> Contact Number: ${contactNumber || "Not specified"} </p>
+                        <p> Contact Person: ${contactPerso || "Not specified"} </p>
+                        <p> Country of Organization: ${countriesOfOrganization || "Not specified"} </p>
+                        <p> Headquaters: ${countryOfHeadquarter || "Not specified"} </p>
+                        <p> Type of Organization: ${organizationType || "Not specified"} </p>
                         </body>
                         </html>
                     `
