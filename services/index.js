@@ -14,7 +14,7 @@ async function sendMail(from, html) {
 
   let mailOptions = {
     from: from,
-    to: "ayodejiakinborewa@gmail.com",
+    to: "iogunfuwa@impactinvestorsfoundation.org, mglover@impactinvestorsfoundation.org",
     subject: "NABII Membership Notification",
     html: html
   };
