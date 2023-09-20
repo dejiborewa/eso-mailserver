@@ -1,12 +1,18 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import mail from './routes/index.js'
-
+import cors from "cors"
 
 dotenv.config()
 
+const corsOptions = {
+  origin: ["https://nabii.impactinvestorsfoundation.org", "http://localhost:4200"],
+  methods: "POST",
+};
+
 const app = express()
 
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use('/', mail)
 
