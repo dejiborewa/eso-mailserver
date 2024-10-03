@@ -11,7 +11,7 @@ const corsOptions = {
       "https://eso-frontend.vercel.app/",
       "http://localhost:6000",
    ],
-   methods: "POST",
+   methods: ["GET", "POST"],
 };
 
 const app = express();

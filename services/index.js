@@ -24,7 +24,6 @@ async function sendMail(to, html) {
       return info;
    } catch (error) {
       console.log(error);
-      throw new Error(error);
    }
 }
 

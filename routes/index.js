@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
       const { payload } = req.body;
 
       if (payload) {
-         const { otp, from, to } = decryptData(payload);
+         const { otp, to } = decryptData(payload);
          const html = `
                            <head>
                               <style>
