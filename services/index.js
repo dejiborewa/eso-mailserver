@@ -6,8 +6,8 @@ async function sendMail(from, to, html) {
       port: 465,
       secure: true,
       auth: {
-         user: "ayodejiakinborewa@gmail.com",
-         pass: process.env.EMAIL_PASS,
+         user: "techteam@impactinvestorsfoundation.org",
+         pass: process.env.EMAIL_PASSWORD,
       },
    });
 
