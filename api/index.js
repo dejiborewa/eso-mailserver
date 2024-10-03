@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 6000;
 app.use(cors(corsOptions));
 app.use(express.json());
 
-app.post("/", mailController);
+app.post("/api/request-otp", mailController);
 
 app.listen(
    PORT,
