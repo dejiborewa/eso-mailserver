@@ -1,27 +1,26 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import mail from './routes/index.js'
-import cors from "cors"
+import express from "express";
+import dotenv from "dotenv";
+import mail from "./routes/index.js";
+import cors from "cors";
 
-dotenv.config()
+dotenv.config();
 
 const corsOptions = {
-  origin: ["https://nabii.impactinvestorsfoundation.org", "http://localhost:4200"],
-  methods: "POST",
+   origin: ["https://eso-frontend.vercel.app/", "http://localhost:6000"],
+   methods: "POST",
 };
 
-const app = express()
+const app = express();
 
-app.use(cors(corsOptions))
-app.use(express.json())
-app.use('/', mail)
+app.use(cors(corsOptions));
+app.use(express.json());
+app.use("/", mail);
 
-
-const PORT = process.env.PORT || 6000
+const PORT = process.env.PORT || 6000;
 
 app.listen(
-  PORT,
-  console.log(
-    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`
-  )
-)
+   PORT,
+   console.log(
+      `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`,
+   ),
+);
