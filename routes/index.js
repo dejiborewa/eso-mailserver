@@ -6,32 +6,40 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
    try {
-      const { otp } = req.body;
-      const decryptedOTP = decryptData(otp);
-      const html = `
-                        <head>
-                           <style>
-                           </style>
-                        </head>
-                           <body>
-                              <p>Here is your one-time password, it will expire after 5 minutes</p>
-                              <bold>${decryptedOTP}</bold>
-                           </body>
-                        </html>
-                    `;
+      const { payload } = req.body;
 
-      const response = await sendMail(from, to, html);
+      if (payload) {
+         const { otp, from, to } = decryptData(payload);
+         const html = `
+                           <head>
+                              <style>
+                              </style>
+                           </head>
+                              <body>
+                                 <p>Here is your one-time password, it will expire after 5 minutes</p>
+                                 <bold>${otp}</bold>
+                              </body>
+                           </html>
+                       `;
 
-      if (response) {
-         return res.status(200).json({ status: true, message: "message sent" });
-      } else {
-         console.log("Email not sent:", response);
-         return res
-            .status(400)
-            .json({
+         const response = await sendMail(from, to, html);
+
+         if (response) {
+            return res
+               .status(200)
+               .json({ status: true, message: "message sent" });
+         } else {
+            console.log("Email not sent:", response);
+            return res.status(400).json({
                status: false,
                message: "Bad Request! Failed to send the message",
             });
+         }
+      } else {
+         res.status(400).json({
+            status: false,
+            message: "Bad Request",
+         });
       }
    } catch (error) {
       console.log(error);
