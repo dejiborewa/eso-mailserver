@@ -4,9 +4,15 @@ import mail from "./routes/index.js";
 import cors from "cors";
 
 dotenv.config();
+
+const corsOptions = {
+   origin: "*", // Replace with specific origin if needed
+   methods: ["GET", "POST", "PUT", "DELETE"], // Add other methods as needed
+};
+
 const app = express();
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/", mail);
 
