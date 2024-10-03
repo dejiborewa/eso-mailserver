@@ -1,10 +1,7 @@
-import express from "express";
-import sendMail from "../services/index.js";
 import { decryptData } from "../utils/decrypt.js";
+import sendMail from "../services/index.js";
 
-const router = express.Router();
-
-router.post("/", async (req, res) => {
+const mailController = async (req, res) => {
    try {
       const { payload } = req.body;
 
@@ -48,6 +45,6 @@ router.post("/", async (req, res) => {
          message: "An error occurred while sending the message.",
       });
    }
-});
+};
 
-export default router;
+export default mailController;

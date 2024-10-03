@@ -2,7 +2,7 @@
    "name": "ESO-mailserver",
    "version": "1.0.0",
    "description": "A node server to send mail notifications",
-   "main": "index.js",
+   "main": "api/index.js",
    "type": "module",
    "scripts": {
       "start": "node index",

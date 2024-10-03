@@ -1,22 +1,26 @@
 import express from "express";
 import dotenv from "dotenv";
-import mail from "./routes/index.js";
 import cors from "cors";
+import mailController from "../controller/mailController.js";
 
 dotenv.config();
 
 const corsOptions = {
-   origin: "*", // Replace with specific origin if needed
-   methods: ["GET", "POST", "PUT", "DELETE"], // Add other methods as needed
+   origin: [
+      "https://eso-mailserver.vercel.app/",
+      "https://eso-frontend.vercel.app/",
+      "http://localhost:6000",
+   ],
+   methods: "POST",
 };
 
 const app = express();
+const PORT = process.env.PORT || 6000;
 
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use("/", mail);
 
-const PORT = process.env.PORT || 6000;
+app.post("/", mailController);
 
 app.listen(
    PORT,
