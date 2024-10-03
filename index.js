@@ -4,19 +4,9 @@ import mail from "./routes/index.js";
 import cors from "cors";
 
 dotenv.config();
-
-const corsOptions = {
-   origin: [
-      "https://eso-mailserver.vercel.app/",
-      "https://eso-frontend.vercel.app/",
-      "http://localhost:6000",
-   ],
-   methods: ["GET", "POST"],
-};
-
 const app = express();
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use("/", mail);
 
