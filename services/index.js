@@ -1,18 +1,18 @@
 import nodemailer from "nodemailer";
 
-async function sendMail(from, to, html) {
+async function sendMail(to, html) {
    let transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
       secure: true,
       auth: {
-         user: "techteam@impactinvestorsfoundation.org",
+         user: process.env.EMAIL_ACCOUNT,
          pass: process.env.EMAIL_PASSWORD,
       },
    });
 
    let mailOptions = {
-      from: from,
+      from: process.env.EMAIL_ACCOUNT,
       to: to,
       subject: "Welcome to ESO Collaborative",
       html: html,

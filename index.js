@@ -6,7 +6,11 @@ import cors from "cors";
 dotenv.config();
 
 const corsOptions = {
-   origin: ["https://eso-mailserver.vercel.app/", "http://localhost:6000"],
+   origin: [
+      "https://eso-mailserver.vercel.app/",
+      "https://eso-frontend.vercel.app/",
+      "http://localhost:6000",
+   ],
    methods: "POST",
 };
 

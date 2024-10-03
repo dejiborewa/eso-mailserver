@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
                            </html>
                        `;
 
-         const response = await sendMail(from, to, html);
+         const response = await sendMail(to, html);
 
          if (response) {
             return res
